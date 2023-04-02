@@ -3,12 +3,13 @@
 // if elseif logic
 
 
-$section=$_GET['section'] ?? 'home';
+$section=$_GET['section'] ?? $_POST['section']??'home';
+$action=$_GET['action']?? $_POST['action']??'show';
 
 if($section=='about_us'){
     include'controller/aboutUsPage.php';
 
-} elseif($section=='contact'){
+} else if($section=='contact'){
     include 'controller/contactUsPage.php';
 
 }else{
